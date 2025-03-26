@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+    --chart-1: 196 100% 50%;  /* Cyan */
+    --chart-2: 328 100% 54%;  /* Pink */
+    --chart-3: 271 76% 53%;   /* Purple */
+    --chart-4: 240 100% 40%;  /* Dark Blue */
+    --chart-5: 180 100% 25%;  /* Teal */
+  }
+ 
+  .dark {
+    --background: 260 15% 10%;  /* Dark purple background */
+    --foreground: 210 40% 98%;
+    --card: 260 15% 15%;        /* Slightly lighter card background */
+    --card-foreground: 210 40% 98%;
+    --popover: 260 15% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 271 91% 50%;     /* Vibrant purple primary */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 15% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 260 15% 20%;
+    --muted-foreground: 215 20.2% 75%;
+    --accent: 271 91% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 65%;  /* Bright red */
+    --destructive-foreground: 210 40% 98%;
+    --border: 260 15% 20%;
+    --input: 260 15% 20%;
+    --ring: 271 91% 50%;
+    --chart-1: 196 100% 50%;    /* Cyan */
+    --chart-2: 328 100% 54%;    /* Pink */
+    --chart-3: 271 76% 53%;     /* Purple */
+    --chart-4: 240 100% 40%;    /* Dark Blue */
+    --chart-5: 180 100% 25%;    /* Teal */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    direction: rtl;
+    font-family: 'Vazirmatn', system-ui, sans-serif;
+  }
+}
+
+/* Add Persian font support */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom animation for charts */
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.chart-pulse {
+  animation: pulse 2s infinite;
+}
+
+.chart-circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+}
